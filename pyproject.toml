@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-bench"
+version = "0.1.0"
+description = "在多个 OpenAI 兼容模型上跑固定任务，对比延迟、成本与正确率"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "eathink" }]
+keywords = ["llm", "benchmark", "openai", "cli", "evaluation"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+llm-bench = "llm_bench.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/eathink/llm-bench"
+
+[tool.setuptools.packages.find]
+where = ["src"]
